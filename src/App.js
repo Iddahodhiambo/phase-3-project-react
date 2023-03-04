@@ -3,6 +3,8 @@ import './App.css';
 import { useState, useEffect } from'react';
 import Task from './components/tasks';
 import Log_in from './components/log_in';
+import {Routes, Route} from 'react-router-dom';
+import SignUp from './components/SignUp';
 
 
 
@@ -22,7 +24,10 @@ import Log_in from './components/log_in';
     
   return (
     <div className="App">
-      <Log_in/>
+      <Routes>
+        <Route path="/login" element={<Log_in/>} />
+        <Route path="/signup" element={<SignUp />} />
+      </Routes>
     </div>
   )
 }
