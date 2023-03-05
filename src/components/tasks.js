@@ -3,19 +3,43 @@ import Taskdetails from "./taskdetails";
 import TaskForm from "./TaskForm";
 
 function Task({ tasks, setTasks }) {
-
   const [showTaskForm, setShowTaskForm] = useState(false);
+  const [category, setCategory] = useState("all");
 
   function handleClick() {
     setShowTaskForm(!showTaskForm);
   }
 
+  function handleChange(event) {
+    setCategory(event.target.value);
+    console.log(category);
+  }
+
+  //set tasks based on completion status selected
+  const tasksToDisplay = tasks.filter(
+      (task) => category === "all" || `${task.completion_status}` === category
+    );
+
   return (
     <>
-      <button className="button" onClick={handleClick} >Create New Task</button>
-      {showTaskForm ? <TaskForm tasks={tasks} setTasks={setTasks}  /> : null}
+      <button className="button" onClick={handleClick}>
+        Create New Task
+      </button>
+      {showTaskForm ? <TaskForm tasks={tasks} setTasks={setTasks} /> : null}
+      <div className="filter">
+        <label for="completion status">Filter by completion status</label>
+        <select
+          id="completion_status"
+          name="completion_status"
+          onChange={handleChange}
+        >
+          <option value="all">All</option>
+          <option value="false">Incomplete</option>
+          <option value="true">Complete</option>
+        </select>
+      </div>
       <div>
-        {tasks.map((task) => {
+        {tasksToDisplay.map((task) => {
           return (
             <Taskdetails
               title={task.title}

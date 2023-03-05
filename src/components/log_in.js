@@ -25,9 +25,10 @@ function Log_in({setUser}) {
     })
       .then((res) => res.json())
       .then((data) =>{
+        console.log(data);
         if (data.message === "SUCCESS"){
+          navigate("/tasks")
           setUser(data.data)
-          navigate("/tasks");
         }
         else{
           setErrors(<li className="li" >{data.data.message}</li>)

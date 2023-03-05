@@ -15,7 +15,6 @@ import SignUp from './components/SignUp';
     useEffect(function() {
      fetch("http://localhost:9292/tasks").then((response)=> response.json()).then((data) => {
        setTasks(data)
-      console.log(data)
         
      })
       
