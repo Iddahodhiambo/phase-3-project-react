@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Taskdetails from "./taskdetails";
 import TaskForm from "./TaskForm";
 
-function Task({ tasks }) {
+function Task({ tasks, setTasks }) {
 
   const [showTaskForm, setShowTaskForm] = useState(false);
 
@@ -13,7 +13,7 @@ function Task({ tasks }) {
   return (
     <>
       <button className="button" onClick={handleClick} >Create New Task</button>
-      {showTaskForm ? <TaskForm /> : null}
+      {showTaskForm ? <TaskForm tasks={tasks} setTasks={setTasks}  /> : null}
       <div>
         {tasks.map((task) => {
           return (

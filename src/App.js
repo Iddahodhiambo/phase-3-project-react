@@ -26,7 +26,7 @@ import SignUp from './components/SignUp';
       <Routes>
         <Route path="/login" element={<Log_in setUser={setUser} />} />
         <Route path="/signup" element={<SignUp setUser={setUser}/>} />
-        <Route path="/tasks" element={<Task tasks = {tasks}/>} />
+        <Route path="/tasks" element={<Task tasks = {tasks} setTasks={setTasks}/>} />
         <Route path="*" element={<Log_in to="/login" replace />} />
     </Routes>
     </div>
