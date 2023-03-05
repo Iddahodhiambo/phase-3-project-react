@@ -54,7 +54,7 @@ input[type=submit]:hover {
   text-align: center;
   overflow: hidden;
   box-shadow: 0px 0px 15px -5px;
-  background-color: gray;
+  background-color: navy;
   color: white;
   margin-bottom: 3%;
   margin-left: 3%;
@@ -76,7 +76,7 @@ input[type=submit]:hover {
 }
 .button{
   color: white;
-  background-color: green;
+  background-color: orange;
   padding: 1rem;
   border-radius: 10px;
   border: none;
@@ -100,5 +100,8 @@ input[type=submit]:hover {
   font-style: normal;  font-weight: 100;
   margin-left: auto;
    margin-left: 45%; 
-   font-size: medium;
+   font-display: bold;
+}
+*{
+  background-color:rgb (137,189,249);
 }

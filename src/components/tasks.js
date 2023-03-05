@@ -27,7 +27,7 @@ function Task({ tasks, setTasks }) {
       </button>
       {showTaskForm ? <TaskForm tasks={tasks} setTasks={setTasks} /> : null}
       <div className="filter">
-        <label for="completion status">Filter by completion status</label>
+        <label for="completion status">Filter by completion status:</label>
         <select
           id="completion_status"
           name="completion_status"
