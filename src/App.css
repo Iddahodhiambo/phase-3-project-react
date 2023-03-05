@@ -54,13 +54,13 @@ input[type=submit]:hover {
   text-align: center;
   overflow: hidden;
   box-shadow: 0px 0px 15px -5px;
-  background-color: rgb(16, 16, 15);
+  background-color: gray;
   color: white;
   margin-bottom: 3%;
   margin-left: 3%;
-  width: 400px;
+  width: 300px;
   display: inline-block;
-  height: 400px;
+  height: 300px;
   margin-top: 4%;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-style: normal;
@@ -69,4 +69,17 @@ input[type=submit]:hover {
 
 .li {
   color: red;
+}
+
+.icon {
+  background-color: green;
+}
+.button{
+  color: white;
+  background-color: green;
+  padding: 1rem;
+  border-radius: 10px;
+  border: none;
+  margin-left: 45%;
+  margin-top: 2%;
 }
