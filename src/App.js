@@ -9,7 +9,9 @@ import SignUp from './components/SignUp';
 
 
   function App() {
-    const [tasks, setTasks] = useState([])
+    const [tasks, setTasks] = useState([]);
+    const [user, setUser] = useState(null);
+
     useEffect(function() {
      fetch("http://localhost:9292/tasks").then((response)=> response.json()).then((data) => {
        setTasks(data)
@@ -22,9 +24,10 @@ import SignUp from './components/SignUp';
  return (
     <div className="App">
       <Routes>
-        <Route path="/login" element={<Log_in/>} />
-        <Route path="/signup" element={<SignUp/>} />
+        <Route path="/login" element={<Log_in setUser={setUser} />} />
+        <Route path="/signup" element={<SignUp setUser={setUser}/>} />
         <Route  classname = "details"path="/tasks" element={<Task tasks = {tasks}/>} />
+        <Route path="*" element={<Log_in to="/login" replace />} />
     </Routes>
     </div>
   )

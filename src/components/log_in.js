@@ -1,11 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-function Log_in() {
+function Log_in({setUser}) {
   const [formData, setFormData] = useState({
     email: "",
     password: "",
   });
+  const [errors, setErrors] = useState([]);
 
   const navigate = useNavigate();
   //Redirect to sign up page
@@ -23,7 +24,15 @@ function Log_in() {
       body: JSON.stringify(formData),
     })
       .then((res) => res.json())
-      .then((data) => console.log(data));
+      .then((data) =>{
+        if (data.message === "SUCCESS"){
+          setUser(data.data)
+          navigate("/tasks");
+        }
+        else{
+          setErrors(<li className="li" >{data.data.message}</li>)
+        }
+      });
   }
 
   //handle formdata change
@@ -62,6 +71,9 @@ function Log_in() {
 
         <input type="submit" value="Log in" />
       </form>
+      <ul>
+        {errors}
+      </ul>
       <hr />
       <div class="signup">
         <p>Don't have an account?</p>
