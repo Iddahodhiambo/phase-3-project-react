@@ -21,7 +21,7 @@ function Task({ tasks, setTasks }) {
     );
 
   return (
-    <>
+    <><h3 className="heading">TASK MANAGER</h3>
       <button className="button" onClick={handleClick}>
         Create New Task
       </button>

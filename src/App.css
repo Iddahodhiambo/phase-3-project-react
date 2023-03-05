@@ -95,3 +95,10 @@ input[type=submit]:hover {
   margin-left: auto;
   margin-right: auto;
 }
+.heading{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-style: normal;  font-weight: 100;
+  margin-left: auto;
+   margin-left: 45%; 
+   font-size: medium;
+}
