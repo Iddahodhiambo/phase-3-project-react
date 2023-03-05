@@ -9,25 +9,23 @@ import SignUp from './components/SignUp';
 
 
   function App() {
-  //   const [tasks, setTasks] = useState([])
-  //   useEffect(function() {
-  //   fetch("http://localhost:9292/tasks").then((response)=> response.json()).then((data) => {
-  //     setTasks(data)
-  //     console.log(data)
+    const [tasks, setTasks] = useState([])
+    useEffect(function() {
+     fetch("http://localhost:9292/tasks").then((response)=> response.json()).then((data) => {
+       setTasks(data)
+      console.log(data)
         
-  //     })
+     })
       
-  // },[])
+  },[])
   
-
-
-    
-  return (
+ return (
     <div className="App">
       <Routes>
         <Route path="/login" element={<Log_in/>} />
-        <Route path="/signup" element={<SignUp />} />
-      </Routes>
+        <Route path="/signup" element={<SignUp/>} />
+        <Route  classname = "details"path="/tasks" element={<Task tasks = {tasks}/>} />
+    </Routes>
     </div>
   )
 }
